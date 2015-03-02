@@ -1,0 +1,474 @@
+Simulator report for Main
+Sun Mar 01 19:09:09 2015
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 265 nodes    ;
+; Simulation Coverage         ;      83.02 % ;
+; Total Number of Transitions ; 2357         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                         ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                       ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                    ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                          ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                           ;               ;
+; Vector input source                                                                        ; C:/School Work/ENG PHYS Y3/Term 2/Ece 355/Ass 1/timerTest.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                            ; On            ;
+; Check outputs                                                                              ; Off                                                           ; Off           ;
+; Report simulation coverage                                                                 ; On                                                            ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                            ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                            ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                            ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                           ; Off           ;
+; Detect glitches                                                                            ; Off                                                           ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                           ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                           ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                           ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                           ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                            ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                    ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                           ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                           ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                          ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      83.02 % ;
+; Total nodes checked                                 ; 265          ;
+; Total output ports checked                          ; 265          ;
+; Total output ports with complete 1/0-value coverage ; 220          ;
+; Total output ports with no 1/0-value coverage       ; 43           ;
+; Total output ports with no 1-value coverage         ; 45           ;
+; Total output ports with no 0-value coverage         ; 43           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |timerTest|Done                    ; |timerTest|Done                    ; pin_out          ;
+; |timerTest|Clock                   ; |timerTest|Clock                   ; out              ;
+; |timerTest|Load                    ; |timerTest|Load                    ; out              ;
+; |timerTest|Mode[1]                 ; |timerTest|Mode[1]                 ; out              ;
+; |timerTest|Mode[0]                 ; |timerTest|Mode[0]                 ; out              ;
+; |timerTest|Timer:inst|process_0~0  ; |timerTest|Timer:inst|process_0~0  ; out0             ;
+; |timerTest|Timer:inst|process_0~1  ; |timerTest|Timer:inst|process_0~1  ; out0             ;
+; |timerTest|Timer:inst|Count[0]     ; |timerTest|Timer:inst|Count[0]     ; regout           ;
+; |timerTest|Timer:inst|Count~0      ; |timerTest|Timer:inst|Count~0      ; out              ;
+; |timerTest|Timer:inst|Count~1      ; |timerTest|Timer:inst|Count~1      ; out              ;
+; |timerTest|Timer:inst|Count~2      ; |timerTest|Timer:inst|Count~2      ; out              ;
+; |timerTest|Timer:inst|Count~3      ; |timerTest|Timer:inst|Count~3      ; out              ;
+; |timerTest|Timer:inst|Count~4      ; |timerTest|Timer:inst|Count~4      ; out              ;
+; |timerTest|Timer:inst|Count~5      ; |timerTest|Timer:inst|Count~5      ; out              ;
+; |timerTest|Timer:inst|Count~6      ; |timerTest|Timer:inst|Count~6      ; out              ;
+; |timerTest|Timer:inst|Count~7      ; |timerTest|Timer:inst|Count~7      ; out              ;
+; |timerTest|Timer:inst|Count~8      ; |timerTest|Timer:inst|Count~8      ; out              ;
+; |timerTest|Timer:inst|Count~9      ; |timerTest|Timer:inst|Count~9      ; out              ;
+; |timerTest|Timer:inst|Count~10     ; |timerTest|Timer:inst|Count~10     ; out              ;
+; |timerTest|Timer:inst|Count~11     ; |timerTest|Timer:inst|Count~11     ; out              ;
+; |timerTest|Timer:inst|Count~12     ; |timerTest|Timer:inst|Count~12     ; out              ;
+; |timerTest|Timer:inst|Count~13     ; |timerTest|Timer:inst|Count~13     ; out              ;
+; |timerTest|Timer:inst|Count~14     ; |timerTest|Timer:inst|Count~14     ; out              ;
+; |timerTest|Timer:inst|Count~15     ; |timerTest|Timer:inst|Count~15     ; out              ;
+; |timerTest|Timer:inst|Count~16     ; |timerTest|Timer:inst|Count~16     ; out              ;
+; |timerTest|Timer:inst|Count~17     ; |timerTest|Timer:inst|Count~17     ; out              ;
+; |timerTest|Timer:inst|Count~18     ; |timerTest|Timer:inst|Count~18     ; out              ;
+; |timerTest|Timer:inst|Count~19     ; |timerTest|Timer:inst|Count~19     ; out              ;
+; |timerTest|Timer:inst|Count~20     ; |timerTest|Timer:inst|Count~20     ; out              ;
+; |timerTest|Timer:inst|Count~21     ; |timerTest|Timer:inst|Count~21     ; out              ;
+; |timerTest|Timer:inst|Count~22     ; |timerTest|Timer:inst|Count~22     ; out              ;
+; |timerTest|Timer:inst|Count~23     ; |timerTest|Timer:inst|Count~23     ; out              ;
+; |timerTest|Timer:inst|Count~24     ; |timerTest|Timer:inst|Count~24     ; out              ;
+; |timerTest|Timer:inst|Count~25     ; |timerTest|Timer:inst|Count~25     ; out              ;
+; |timerTest|Timer:inst|Count~26     ; |timerTest|Timer:inst|Count~26     ; out              ;
+; |timerTest|Timer:inst|Count~27     ; |timerTest|Timer:inst|Count~27     ; out              ;
+; |timerTest|Timer:inst|Count~28     ; |timerTest|Timer:inst|Count~28     ; out              ;
+; |timerTest|Timer:inst|Count~29     ; |timerTest|Timer:inst|Count~29     ; out              ;
+; |timerTest|Timer:inst|Count~30     ; |timerTest|Timer:inst|Count~30     ; out              ;
+; |timerTest|Timer:inst|Count~31     ; |timerTest|Timer:inst|Count~31     ; out              ;
+; |timerTest|Timer:inst|Count~32     ; |timerTest|Timer:inst|Count~32     ; out              ;
+; |timerTest|Timer:inst|Count~33     ; |timerTest|Timer:inst|Count~33     ; out              ;
+; |timerTest|Timer:inst|Count~34     ; |timerTest|Timer:inst|Count~34     ; out              ;
+; |timerTest|Timer:inst|Count~35     ; |timerTest|Timer:inst|Count~35     ; out              ;
+; |timerTest|Timer:inst|Count~36     ; |timerTest|Timer:inst|Count~36     ; out              ;
+; |timerTest|Timer:inst|Count~37     ; |timerTest|Timer:inst|Count~37     ; out              ;
+; |timerTest|Timer:inst|Count~38     ; |timerTest|Timer:inst|Count~38     ; out              ;
+; |timerTest|Timer:inst|Count~39     ; |timerTest|Timer:inst|Count~39     ; out              ;
+; |timerTest|Timer:inst|Count~40     ; |timerTest|Timer:inst|Count~40     ; out              ;
+; |timerTest|Timer:inst|Count~41     ; |timerTest|Timer:inst|Count~41     ; out              ;
+; |timerTest|Timer:inst|Count~42     ; |timerTest|Timer:inst|Count~42     ; out              ;
+; |timerTest|Timer:inst|Count~43     ; |timerTest|Timer:inst|Count~43     ; out              ;
+; |timerTest|Timer:inst|Count~44     ; |timerTest|Timer:inst|Count~44     ; out              ;
+; |timerTest|Timer:inst|Count~45     ; |timerTest|Timer:inst|Count~45     ; out              ;
+; |timerTest|Timer:inst|Count~46     ; |timerTest|Timer:inst|Count~46     ; out              ;
+; |timerTest|Timer:inst|Count~47     ; |timerTest|Timer:inst|Count~47     ; out              ;
+; |timerTest|Timer:inst|Count~48     ; |timerTest|Timer:inst|Count~48     ; out              ;
+; |timerTest|Timer:inst|Count~49     ; |timerTest|Timer:inst|Count~49     ; out              ;
+; |timerTest|Timer:inst|Count~50     ; |timerTest|Timer:inst|Count~50     ; out              ;
+; |timerTest|Timer:inst|Count~51     ; |timerTest|Timer:inst|Count~51     ; out              ;
+; |timerTest|Timer:inst|Count~52     ; |timerTest|Timer:inst|Count~52     ; out              ;
+; |timerTest|Timer:inst|Count~53     ; |timerTest|Timer:inst|Count~53     ; out              ;
+; |timerTest|Timer:inst|Count~54     ; |timerTest|Timer:inst|Count~54     ; out              ;
+; |timerTest|Timer:inst|Count~55     ; |timerTest|Timer:inst|Count~55     ; out              ;
+; |timerTest|Timer:inst|Count~56     ; |timerTest|Timer:inst|Count~56     ; out              ;
+; |timerTest|Timer:inst|Count~57     ; |timerTest|Timer:inst|Count~57     ; out              ;
+; |timerTest|Timer:inst|Count~58     ; |timerTest|Timer:inst|Count~58     ; out              ;
+; |timerTest|Timer:inst|Count~59     ; |timerTest|Timer:inst|Count~59     ; out              ;
+; |timerTest|Timer:inst|Count~60     ; |timerTest|Timer:inst|Count~60     ; out              ;
+; |timerTest|Timer:inst|Count~61     ; |timerTest|Timer:inst|Count~61     ; out              ;
+; |timerTest|Timer:inst|Count~62     ; |timerTest|Timer:inst|Count~62     ; out              ;
+; |timerTest|Timer:inst|Count~63     ; |timerTest|Timer:inst|Count~63     ; out              ;
+; |timerTest|Timer:inst|Count~64     ; |timerTest|Timer:inst|Count~64     ; out              ;
+; |timerTest|Timer:inst|Count~65     ; |timerTest|Timer:inst|Count~65     ; out              ;
+; |timerTest|Timer:inst|Count~66     ; |timerTest|Timer:inst|Count~66     ; out              ;
+; |timerTest|Timer:inst|Count~67     ; |timerTest|Timer:inst|Count~67     ; out              ;
+; |timerTest|Timer:inst|Count~68     ; |timerTest|Timer:inst|Count~68     ; out              ;
+; |timerTest|Timer:inst|Count~69     ; |timerTest|Timer:inst|Count~69     ; out              ;
+; |timerTest|Timer:inst|Count~70     ; |timerTest|Timer:inst|Count~70     ; out              ;
+; |timerTest|Timer:inst|Count~71     ; |timerTest|Timer:inst|Count~71     ; out              ;
+; |timerTest|Timer:inst|Count~72     ; |timerTest|Timer:inst|Count~72     ; out              ;
+; |timerTest|Timer:inst|Count~73     ; |timerTest|Timer:inst|Count~73     ; out              ;
+; |timerTest|Timer:inst|Count~74     ; |timerTest|Timer:inst|Count~74     ; out              ;
+; |timerTest|Timer:inst|Count~75     ; |timerTest|Timer:inst|Count~75     ; out              ;
+; |timerTest|Timer:inst|Count~76     ; |timerTest|Timer:inst|Count~76     ; out              ;
+; |timerTest|Timer:inst|Count~77     ; |timerTest|Timer:inst|Count~77     ; out              ;
+; |timerTest|Timer:inst|Count~78     ; |timerTest|Timer:inst|Count~78     ; out              ;
+; |timerTest|Timer:inst|Count~79     ; |timerTest|Timer:inst|Count~79     ; out              ;
+; |timerTest|Timer:inst|Count~80     ; |timerTest|Timer:inst|Count~80     ; out              ;
+; |timerTest|Timer:inst|Count~81     ; |timerTest|Timer:inst|Count~81     ; out              ;
+; |timerTest|Timer:inst|Count~82     ; |timerTest|Timer:inst|Count~82     ; out              ;
+; |timerTest|Timer:inst|Count~83     ; |timerTest|Timer:inst|Count~83     ; out              ;
+; |timerTest|Timer:inst|Count~84     ; |timerTest|Timer:inst|Count~84     ; out              ;
+; |timerTest|Timer:inst|Count~85     ; |timerTest|Timer:inst|Count~85     ; out              ;
+; |timerTest|Timer:inst|Count~86     ; |timerTest|Timer:inst|Count~86     ; out              ;
+; |timerTest|Timer:inst|Count~87     ; |timerTest|Timer:inst|Count~87     ; out              ;
+; |timerTest|Timer:inst|Count~88     ; |timerTest|Timer:inst|Count~88     ; out              ;
+; |timerTest|Timer:inst|Count~89     ; |timerTest|Timer:inst|Count~89     ; out              ;
+; |timerTest|Timer:inst|Count~90     ; |timerTest|Timer:inst|Count~90     ; out              ;
+; |timerTest|Timer:inst|Count~91     ; |timerTest|Timer:inst|Count~91     ; out              ;
+; |timerTest|Timer:inst|Count~92     ; |timerTest|Timer:inst|Count~92     ; out              ;
+; |timerTest|Timer:inst|Count~93     ; |timerTest|Timer:inst|Count~93     ; out              ;
+; |timerTest|Timer:inst|Count~94     ; |timerTest|Timer:inst|Count~94     ; out              ;
+; |timerTest|Timer:inst|Count~95     ; |timerTest|Timer:inst|Count~95     ; out              ;
+; |timerTest|Timer:inst|Count~96     ; |timerTest|Timer:inst|Count~96     ; out              ;
+; |timerTest|Timer:inst|Count~97     ; |timerTest|Timer:inst|Count~97     ; out              ;
+; |timerTest|Timer:inst|Count~98     ; |timerTest|Timer:inst|Count~98     ; out              ;
+; |timerTest|Timer:inst|Count~99     ; |timerTest|Timer:inst|Count~99     ; out              ;
+; |timerTest|Timer:inst|Count~100    ; |timerTest|Timer:inst|Count~100    ; out              ;
+; |timerTest|Timer:inst|Count~101    ; |timerTest|Timer:inst|Count~101    ; out              ;
+; |timerTest|Timer:inst|Count~102    ; |timerTest|Timer:inst|Count~102    ; out              ;
+; |timerTest|Timer:inst|Count~103    ; |timerTest|Timer:inst|Count~103    ; out              ;
+; |timerTest|Timer:inst|Count[1]     ; |timerTest|Timer:inst|Count[1]     ; regout           ;
+; |timerTest|Timer:inst|Count[2]     ; |timerTest|Timer:inst|Count[2]     ; regout           ;
+; |timerTest|Timer:inst|Count[3]     ; |timerTest|Timer:inst|Count[3]     ; regout           ;
+; |timerTest|Timer:inst|LessThan0~0  ; |timerTest|Timer:inst|LessThan0~0  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~1  ; |timerTest|Timer:inst|LessThan0~1  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~2  ; |timerTest|Timer:inst|LessThan0~2  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~3  ; |timerTest|Timer:inst|LessThan0~3  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~4  ; |timerTest|Timer:inst|LessThan0~4  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~5  ; |timerTest|Timer:inst|LessThan0~5  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~6  ; |timerTest|Timer:inst|LessThan0~6  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~7  ; |timerTest|Timer:inst|LessThan0~7  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~8  ; |timerTest|Timer:inst|LessThan0~8  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~9  ; |timerTest|Timer:inst|LessThan0~9  ; out0             ;
+; |timerTest|Timer:inst|LessThan0~10 ; |timerTest|Timer:inst|LessThan0~10 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~11 ; |timerTest|Timer:inst|LessThan0~11 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~12 ; |timerTest|Timer:inst|LessThan0~12 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~13 ; |timerTest|Timer:inst|LessThan0~13 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~14 ; |timerTest|Timer:inst|LessThan0~14 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~15 ; |timerTest|Timer:inst|LessThan0~15 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~16 ; |timerTest|Timer:inst|LessThan0~16 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~17 ; |timerTest|Timer:inst|LessThan0~17 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~18 ; |timerTest|Timer:inst|LessThan0~18 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~19 ; |timerTest|Timer:inst|LessThan0~19 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~20 ; |timerTest|Timer:inst|LessThan0~20 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~21 ; |timerTest|Timer:inst|LessThan0~21 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~22 ; |timerTest|Timer:inst|LessThan0~22 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~23 ; |timerTest|Timer:inst|LessThan0~23 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~24 ; |timerTest|Timer:inst|LessThan0~24 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~25 ; |timerTest|Timer:inst|LessThan0~25 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~26 ; |timerTest|Timer:inst|LessThan0~26 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~27 ; |timerTest|Timer:inst|LessThan0~27 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~28 ; |timerTest|Timer:inst|LessThan0~28 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~29 ; |timerTest|Timer:inst|LessThan0~29 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~30 ; |timerTest|Timer:inst|LessThan0~30 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~31 ; |timerTest|Timer:inst|LessThan0~31 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~32 ; |timerTest|Timer:inst|LessThan0~32 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~33 ; |timerTest|Timer:inst|LessThan0~33 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~34 ; |timerTest|Timer:inst|LessThan0~34 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~35 ; |timerTest|Timer:inst|LessThan0~35 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~36 ; |timerTest|Timer:inst|LessThan0~36 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~37 ; |timerTest|Timer:inst|LessThan0~37 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~38 ; |timerTest|Timer:inst|LessThan0~38 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~39 ; |timerTest|Timer:inst|LessThan0~39 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~40 ; |timerTest|Timer:inst|LessThan0~40 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~41 ; |timerTest|Timer:inst|LessThan0~41 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~42 ; |timerTest|Timer:inst|LessThan0~42 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~43 ; |timerTest|Timer:inst|LessThan0~43 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~44 ; |timerTest|Timer:inst|LessThan0~44 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~45 ; |timerTest|Timer:inst|LessThan0~45 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~46 ; |timerTest|Timer:inst|LessThan0~46 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~47 ; |timerTest|Timer:inst|LessThan0~47 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~48 ; |timerTest|Timer:inst|LessThan0~48 ; out0             ;
+; |timerTest|Timer:inst|LessThan0~49 ; |timerTest|Timer:inst|LessThan0~49 ; out0             ;
+; |timerTest|Timer:inst|Add0~0       ; |timerTest|Timer:inst|Add0~0       ; out0             ;
+; |timerTest|Timer:inst|Add0~1       ; |timerTest|Timer:inst|Add0~1       ; out0             ;
+; |timerTest|Timer:inst|Add0~2       ; |timerTest|Timer:inst|Add0~2       ; out0             ;
+; |timerTest|Timer:inst|Add0~3       ; |timerTest|Timer:inst|Add0~3       ; out0             ;
+; |timerTest|Timer:inst|Add0~4       ; |timerTest|Timer:inst|Add0~4       ; out0             ;
+; |timerTest|Timer:inst|Add0~5       ; |timerTest|Timer:inst|Add0~5       ; out0             ;
+; |timerTest|Timer:inst|Add0~6       ; |timerTest|Timer:inst|Add0~6       ; out0             ;
+; |timerTest|Timer:inst|Add0~7       ; |timerTest|Timer:inst|Add0~7       ; out0             ;
+; |timerTest|Timer:inst|Add0~8       ; |timerTest|Timer:inst|Add0~8       ; out0             ;
+; |timerTest|Timer:inst|Add0~9       ; |timerTest|Timer:inst|Add0~9       ; out0             ;
+; |timerTest|Timer:inst|Add0~10      ; |timerTest|Timer:inst|Add0~10      ; out0             ;
+; |timerTest|Timer:inst|Add0~12      ; |timerTest|Timer:inst|Add0~12      ; out0             ;
+; |timerTest|Timer:inst|Add0~13      ; |timerTest|Timer:inst|Add0~13      ; out0             ;
+; |timerTest|Timer:inst|Add0~15      ; |timerTest|Timer:inst|Add0~15      ; out0             ;
+; |timerTest|Timer:inst|Add0~16      ; |timerTest|Timer:inst|Add0~16      ; out0             ;
+; |timerTest|Timer:inst|Add0~18      ; |timerTest|Timer:inst|Add0~18      ; out0             ;
+; |timerTest|Timer:inst|Add0~19      ; |timerTest|Timer:inst|Add0~19      ; out0             ;
+; |timerTest|Timer:inst|Add0~21      ; |timerTest|Timer:inst|Add0~21      ; out0             ;
+; |timerTest|Timer:inst|Add0~22      ; |timerTest|Timer:inst|Add0~22      ; out0             ;
+; |timerTest|Timer:inst|Add0~24      ; |timerTest|Timer:inst|Add0~24      ; out0             ;
+; |timerTest|Timer:inst|Add0~25      ; |timerTest|Timer:inst|Add0~25      ; out0             ;
+; |timerTest|Timer:inst|Add0~27      ; |timerTest|Timer:inst|Add0~27      ; out0             ;
+; |timerTest|Timer:inst|Add0~28      ; |timerTest|Timer:inst|Add0~28      ; out0             ;
+; |timerTest|Timer:inst|Add0~30      ; |timerTest|Timer:inst|Add0~30      ; out0             ;
+; |timerTest|Timer:inst|Add0~31      ; |timerTest|Timer:inst|Add0~31      ; out0             ;
+; |timerTest|Timer:inst|Add0~33      ; |timerTest|Timer:inst|Add0~33      ; out0             ;
+; |timerTest|Timer:inst|Add0~34      ; |timerTest|Timer:inst|Add0~34      ; out0             ;
+; |timerTest|Timer:inst|Add0~36      ; |timerTest|Timer:inst|Add0~36      ; out0             ;
+; |timerTest|Timer:inst|Add0~37      ; |timerTest|Timer:inst|Add0~37      ; out0             ;
+; |timerTest|Timer:inst|Add0~39      ; |timerTest|Timer:inst|Add0~39      ; out0             ;
+; |timerTest|Timer:inst|Add0~40      ; |timerTest|Timer:inst|Add0~40      ; out0             ;
+; |timerTest|Timer:inst|Add0~42      ; |timerTest|Timer:inst|Add0~42      ; out0             ;
+; |timerTest|Timer:inst|Add0~43      ; |timerTest|Timer:inst|Add0~43      ; out0             ;
+; |timerTest|Timer:inst|Add0~45      ; |timerTest|Timer:inst|Add0~45      ; out0             ;
+; |timerTest|Timer:inst|Add0~46      ; |timerTest|Timer:inst|Add0~46      ; out0             ;
+; |timerTest|Timer:inst|Add0~48      ; |timerTest|Timer:inst|Add0~48      ; out0             ;
+; |timerTest|Timer:inst|Add0~49      ; |timerTest|Timer:inst|Add0~49      ; out0             ;
+; |timerTest|Timer:inst|Add0~51      ; |timerTest|Timer:inst|Add0~51      ; out0             ;
+; |timerTest|Timer:inst|Add0~52      ; |timerTest|Timer:inst|Add0~52      ; out0             ;
+; |timerTest|Timer:inst|Add0~54      ; |timerTest|Timer:inst|Add0~54      ; out0             ;
+; |timerTest|Timer:inst|Add0~55      ; |timerTest|Timer:inst|Add0~55      ; out0             ;
+; |timerTest|Timer:inst|Add0~57      ; |timerTest|Timer:inst|Add0~57      ; out0             ;
+; |timerTest|Timer:inst|Add0~58      ; |timerTest|Timer:inst|Add0~58      ; out0             ;
+; |timerTest|Timer:inst|Add0~60      ; |timerTest|Timer:inst|Add0~60      ; out0             ;
+; |timerTest|Timer:inst|Add0~61      ; |timerTest|Timer:inst|Add0~61      ; out0             ;
+; |timerTest|Timer:inst|Add0~63      ; |timerTest|Timer:inst|Add0~63      ; out0             ;
+; |timerTest|Timer:inst|Add0~64      ; |timerTest|Timer:inst|Add0~64      ; out0             ;
+; |timerTest|Timer:inst|Add0~66      ; |timerTest|Timer:inst|Add0~66      ; out0             ;
+; |timerTest|Timer:inst|Add0~67      ; |timerTest|Timer:inst|Add0~67      ; out0             ;
+; |timerTest|Timer:inst|Add0~69      ; |timerTest|Timer:inst|Add0~69      ; out0             ;
+; |timerTest|Timer:inst|Add0~70      ; |timerTest|Timer:inst|Add0~70      ; out0             ;
+; |timerTest|Timer:inst|Add0~72      ; |timerTest|Timer:inst|Add0~72      ; out0             ;
+; |timerTest|Timer:inst|Equal0~0     ; |timerTest|Timer:inst|Equal0~0     ; out0             ;
+; |timerTest|Timer:inst|Equal1~0     ; |timerTest|Timer:inst|Equal1~0     ; out0             ;
+; |timerTest|Timer:inst|Equal3~0     ; |timerTest|Timer:inst|Equal3~0     ; out0             ;
++------------------------------------+------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                 ;
++-----------------------------------+-----------------------------------+------------------+
+; Node Name                         ; Output Port Name                  ; Output Port Type ;
++-----------------------------------+-----------------------------------+------------------+
+; |timerTest|Timer:inst|process_0~2 ; |timerTest|Timer:inst|process_0~2 ; out0             ;
+; |timerTest|Timer:inst|Count[4]    ; |timerTest|Timer:inst|Count[4]    ; regout           ;
+; |timerTest|Timer:inst|Count[5]    ; |timerTest|Timer:inst|Count[5]    ; regout           ;
+; |timerTest|Timer:inst|Count[6]    ; |timerTest|Timer:inst|Count[6]    ; regout           ;
+; |timerTest|Timer:inst|Count[7]    ; |timerTest|Timer:inst|Count[7]    ; regout           ;
+; |timerTest|Timer:inst|Count[8]    ; |timerTest|Timer:inst|Count[8]    ; regout           ;
+; |timerTest|Timer:inst|Count[9]    ; |timerTest|Timer:inst|Count[9]    ; regout           ;
+; |timerTest|Timer:inst|Count[10]   ; |timerTest|Timer:inst|Count[10]   ; regout           ;
+; |timerTest|Timer:inst|Count[11]   ; |timerTest|Timer:inst|Count[11]   ; regout           ;
+; |timerTest|Timer:inst|Count[12]   ; |timerTest|Timer:inst|Count[12]   ; regout           ;
+; |timerTest|Timer:inst|Count[13]   ; |timerTest|Timer:inst|Count[13]   ; regout           ;
+; |timerTest|Timer:inst|Count[14]   ; |timerTest|Timer:inst|Count[14]   ; regout           ;
+; |timerTest|Timer:inst|Count[15]   ; |timerTest|Timer:inst|Count[15]   ; regout           ;
+; |timerTest|Timer:inst|Count[16]   ; |timerTest|Timer:inst|Count[16]   ; regout           ;
+; |timerTest|Timer:inst|Count[17]   ; |timerTest|Timer:inst|Count[17]   ; regout           ;
+; |timerTest|Timer:inst|Count[18]   ; |timerTest|Timer:inst|Count[18]   ; regout           ;
+; |timerTest|Timer:inst|Count[19]   ; |timerTest|Timer:inst|Count[19]   ; regout           ;
+; |timerTest|Timer:inst|Count[20]   ; |timerTest|Timer:inst|Count[20]   ; regout           ;
+; |timerTest|Timer:inst|Count[21]   ; |timerTest|Timer:inst|Count[21]   ; regout           ;
+; |timerTest|Timer:inst|Count[22]   ; |timerTest|Timer:inst|Count[22]   ; regout           ;
+; |timerTest|Timer:inst|Count[23]   ; |timerTest|Timer:inst|Count[23]   ; regout           ;
+; |timerTest|Timer:inst|Count[24]   ; |timerTest|Timer:inst|Count[24]   ; regout           ;
+; |timerTest|Timer:inst|Count[25]   ; |timerTest|Timer:inst|Count[25]   ; regout           ;
+; |timerTest|Timer:inst|Add0~11     ; |timerTest|Timer:inst|Add0~11     ; out0             ;
+; |timerTest|Timer:inst|Add0~14     ; |timerTest|Timer:inst|Add0~14     ; out0             ;
+; |timerTest|Timer:inst|Add0~17     ; |timerTest|Timer:inst|Add0~17     ; out0             ;
+; |timerTest|Timer:inst|Add0~20     ; |timerTest|Timer:inst|Add0~20     ; out0             ;
+; |timerTest|Timer:inst|Add0~23     ; |timerTest|Timer:inst|Add0~23     ; out0             ;
+; |timerTest|Timer:inst|Add0~26     ; |timerTest|Timer:inst|Add0~26     ; out0             ;
+; |timerTest|Timer:inst|Add0~29     ; |timerTest|Timer:inst|Add0~29     ; out0             ;
+; |timerTest|Timer:inst|Add0~32     ; |timerTest|Timer:inst|Add0~32     ; out0             ;
+; |timerTest|Timer:inst|Add0~35     ; |timerTest|Timer:inst|Add0~35     ; out0             ;
+; |timerTest|Timer:inst|Add0~38     ; |timerTest|Timer:inst|Add0~38     ; out0             ;
+; |timerTest|Timer:inst|Add0~41     ; |timerTest|Timer:inst|Add0~41     ; out0             ;
+; |timerTest|Timer:inst|Add0~44     ; |timerTest|Timer:inst|Add0~44     ; out0             ;
+; |timerTest|Timer:inst|Add0~47     ; |timerTest|Timer:inst|Add0~47     ; out0             ;
+; |timerTest|Timer:inst|Add0~50     ; |timerTest|Timer:inst|Add0~50     ; out0             ;
+; |timerTest|Timer:inst|Add0~53     ; |timerTest|Timer:inst|Add0~53     ; out0             ;
+; |timerTest|Timer:inst|Add0~56     ; |timerTest|Timer:inst|Add0~56     ; out0             ;
+; |timerTest|Timer:inst|Add0~59     ; |timerTest|Timer:inst|Add0~59     ; out0             ;
+; |timerTest|Timer:inst|Add0~62     ; |timerTest|Timer:inst|Add0~62     ; out0             ;
+; |timerTest|Timer:inst|Add0~65     ; |timerTest|Timer:inst|Add0~65     ; out0             ;
+; |timerTest|Timer:inst|Add0~68     ; |timerTest|Timer:inst|Add0~68     ; out0             ;
+; |timerTest|Timer:inst|Add0~71     ; |timerTest|Timer:inst|Add0~71     ; out0             ;
+; |timerTest|Timer:inst|Equal2~0    ; |timerTest|Timer:inst|Equal2~0    ; out0             ;
++-----------------------------------+-----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                             ;
++---------------------------------+---------------------------------+------------------+
+; Node Name                       ; Output Port Name                ; Output Port Type ;
++---------------------------------+---------------------------------+------------------+
+; |timerTest|Timer:inst|Count[4]  ; |timerTest|Timer:inst|Count[4]  ; regout           ;
+; |timerTest|Timer:inst|Count[5]  ; |timerTest|Timer:inst|Count[5]  ; regout           ;
+; |timerTest|Timer:inst|Count[6]  ; |timerTest|Timer:inst|Count[6]  ; regout           ;
+; |timerTest|Timer:inst|Count[7]  ; |timerTest|Timer:inst|Count[7]  ; regout           ;
+; |timerTest|Timer:inst|Count[8]  ; |timerTest|Timer:inst|Count[8]  ; regout           ;
+; |timerTest|Timer:inst|Count[9]  ; |timerTest|Timer:inst|Count[9]  ; regout           ;
+; |timerTest|Timer:inst|Count[10] ; |timerTest|Timer:inst|Count[10] ; regout           ;
+; |timerTest|Timer:inst|Count[11] ; |timerTest|Timer:inst|Count[11] ; regout           ;
+; |timerTest|Timer:inst|Count[12] ; |timerTest|Timer:inst|Count[12] ; regout           ;
+; |timerTest|Timer:inst|Count[13] ; |timerTest|Timer:inst|Count[13] ; regout           ;
+; |timerTest|Timer:inst|Count[14] ; |timerTest|Timer:inst|Count[14] ; regout           ;
+; |timerTest|Timer:inst|Count[15] ; |timerTest|Timer:inst|Count[15] ; regout           ;
+; |timerTest|Timer:inst|Count[16] ; |timerTest|Timer:inst|Count[16] ; regout           ;
+; |timerTest|Timer:inst|Count[17] ; |timerTest|Timer:inst|Count[17] ; regout           ;
+; |timerTest|Timer:inst|Count[18] ; |timerTest|Timer:inst|Count[18] ; regout           ;
+; |timerTest|Timer:inst|Count[19] ; |timerTest|Timer:inst|Count[19] ; regout           ;
+; |timerTest|Timer:inst|Count[20] ; |timerTest|Timer:inst|Count[20] ; regout           ;
+; |timerTest|Timer:inst|Count[21] ; |timerTest|Timer:inst|Count[21] ; regout           ;
+; |timerTest|Timer:inst|Count[22] ; |timerTest|Timer:inst|Count[22] ; regout           ;
+; |timerTest|Timer:inst|Count[23] ; |timerTest|Timer:inst|Count[23] ; regout           ;
+; |timerTest|Timer:inst|Count[24] ; |timerTest|Timer:inst|Count[24] ; regout           ;
+; |timerTest|Timer:inst|Count[25] ; |timerTest|Timer:inst|Count[25] ; regout           ;
+; |timerTest|Timer:inst|Add0~11   ; |timerTest|Timer:inst|Add0~11   ; out0             ;
+; |timerTest|Timer:inst|Add0~14   ; |timerTest|Timer:inst|Add0~14   ; out0             ;
+; |timerTest|Timer:inst|Add0~17   ; |timerTest|Timer:inst|Add0~17   ; out0             ;
+; |timerTest|Timer:inst|Add0~20   ; |timerTest|Timer:inst|Add0~20   ; out0             ;
+; |timerTest|Timer:inst|Add0~23   ; |timerTest|Timer:inst|Add0~23   ; out0             ;
+; |timerTest|Timer:inst|Add0~26   ; |timerTest|Timer:inst|Add0~26   ; out0             ;
+; |timerTest|Timer:inst|Add0~29   ; |timerTest|Timer:inst|Add0~29   ; out0             ;
+; |timerTest|Timer:inst|Add0~32   ; |timerTest|Timer:inst|Add0~32   ; out0             ;
+; |timerTest|Timer:inst|Add0~35   ; |timerTest|Timer:inst|Add0~35   ; out0             ;
+; |timerTest|Timer:inst|Add0~38   ; |timerTest|Timer:inst|Add0~38   ; out0             ;
+; |timerTest|Timer:inst|Add0~41   ; |timerTest|Timer:inst|Add0~41   ; out0             ;
+; |timerTest|Timer:inst|Add0~44   ; |timerTest|Timer:inst|Add0~44   ; out0             ;
+; |timerTest|Timer:inst|Add0~47   ; |timerTest|Timer:inst|Add0~47   ; out0             ;
+; |timerTest|Timer:inst|Add0~50   ; |timerTest|Timer:inst|Add0~50   ; out0             ;
+; |timerTest|Timer:inst|Add0~53   ; |timerTest|Timer:inst|Add0~53   ; out0             ;
+; |timerTest|Timer:inst|Add0~56   ; |timerTest|Timer:inst|Add0~56   ; out0             ;
+; |timerTest|Timer:inst|Add0~59   ; |timerTest|Timer:inst|Add0~59   ; out0             ;
+; |timerTest|Timer:inst|Add0~62   ; |timerTest|Timer:inst|Add0~62   ; out0             ;
+; |timerTest|Timer:inst|Add0~65   ; |timerTest|Timer:inst|Add0~65   ; out0             ;
+; |timerTest|Timer:inst|Add0~68   ; |timerTest|Timer:inst|Add0~68   ; out0             ;
+; |timerTest|Timer:inst|Add0~71   ; |timerTest|Timer:inst|Add0~71   ; out0             ;
++---------------------------------+---------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sun Mar 01 19:09:08 2015
+Info: Command: quartus_sim --simulation_results_format=VWF Main -c Main
+Info (324025): Using vector source file "C:/School Work/ENG PHYS Y3/Term 2/Ece 355/Ass 1/timerTest.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning (324036): Found clock-sensitive change during active clock edge at time 270.0 ns on register "|timerTest|Timer:inst|Count[0]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 270.0 ns on register "|timerTest|Timer:inst|Count[1]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 270.0 ns on register "|timerTest|Timer:inst|Count[2]"
+Warning (324036): Found clock-sensitive change during active clock edge at time 270.0 ns on register "|timerTest|Timer:inst|Count[3]"
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      83.02 %
+Info (328052): Number of transitions in simulation is 2357
+Info (324045): Vector file Main.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 311 megabytes
+    Info: Processing ended: Sun Mar 01 19:09:09 2015
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

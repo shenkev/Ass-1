@@ -1,0 +1,23 @@
+LIBRARY	ieee;
+USE		ieee.std_logic_1164.all;
+USE 		ieee.numeric_std.all;
+
+ENTITY PlaybackTimer IS
+	PORT(
+		A, B : IN std_logic_vector(3 DOWNTO 0);
+		SUM : OUT std_logic_vector(3 downto 0);
+		Cin : IN std_logic_vector(0 downto 0);
+		Cout : OUT std_LOGIC
+	);
+END;
+
+ARCHITECTURE Boolean_Logic_Description OF PlaybackTimer IS
+BEGIN
+	process(A, B, Cin)
+		variable Temp : unsigned (4 downto 0);
+	begin	
+		Temp := unsigned('0'&A) + unsigned('0'&B) + unsigned(Cin);
+		SUM <= std_logic_vector(Temp(3 downto 0));
+		Cout <= Temp(4);
+	end process;
+END;

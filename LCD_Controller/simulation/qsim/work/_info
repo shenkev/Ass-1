@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Paul\Desktop\LCD_Controller\simulation\qsim
+vLCD_Display_Controller
+Z1 IA[k7`7>CRA8SIjL9MJj;X3
+Z2 Vc:i9mA8knY9DBC:@fFj860
+Z3 dC:\Users\Paul\Desktop\LCD_Controller\simulation\qsim
+Z4 w1382120154
+Z5 8LCD_DRIVER.vo
+Z6 FLCD_DRIVER.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|LCD_DRIVER.vo|
+Z9 o-work work -O0
+Z10 n@l@c@d_@display_@controller
+!i10b 1
+Z11 !s100 0ZonkVd5L6dEFZe6T6:BV3
+!s85 0
+Z12 !s108 1382120155.823000
+Z13 !s107 LCD_DRIVER.vo|
+!s101 -O0
+vLCD_Display_Controller_vlg_check_tst
+!i10b 1
+!s100 kA;ZPNHHfW6iW_1;z8LE?3
+I1>FZC9j]77Y8AhSTYoF^F0
+Z14 V_SG`NU2YCP=e4::?HGa<83
+R3
+R4
+Z15 8LCD_DRIVER.vt
+Z16 FLCD_DRIVER.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z17 !s108 1382120156.043000
+Z18 !s107 LCD_DRIVER.vt|
+Z19 !s90 -work|work|LCD_DRIVER.vt|
+!s101 -O0
+R9
+Z20 n@l@c@d_@display_@controller_vlg_check_tst
+vLCD_Display_Controller_vlg_sample_tst
+!i10b 1
+Z21 !s100 jQLmg7@2hG]POT4_cSbal1
+Z22 IRR`m00f9JCkR8aYV^iX;>0
+Z23 Vl7:fl^fQIGN_LV?2PXlg]3
+R3
+R4
+R15
+R16
+L0 29
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+Z24 n@l@c@d_@display_@controller_vlg_sample_tst
+vLCD_Display_Controller_vlg_vec_tst
+!i10b 1
+!s100 ?DmB3Kc52GFkWSK5JbhN;2
+I9[cI6zB;mkSHF2]?PG=G?0
+Z25 VkED<@327S?=BGAmVz^M[Q3
+R3
+R4
+R15
+R16
+L0 604
+R7
+r1
+!s85 0
+31
+R17
+R18
+R19
+!s101 -O0
+R9
+Z26 n@l@c@d_@display_@controller_vlg_vec_tst

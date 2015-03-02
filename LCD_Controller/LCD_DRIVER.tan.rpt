@@ -1,0 +1,567 @@
+Classic Timing Analyzer report for LCD_DRIVER
+Mon Jun 24 13:13:20 2013
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLK'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                      ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+--------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                 ; To                                   ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+--------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.757 ns                         ; WriteMessage1                        ; LCDController:inst1|Current_state[1] ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 17.569 ns                        ; LCDController:inst1|theMessage[1][0] ; DB[0]                                ; CLK        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 6.508 ns                         ; MessageNumber[2]                     ; LCDController:inst1|theMessage[0][6] ; --         ; CLK      ; 0            ;
+; Clock Setup: 'CLK'           ; N/A   ; None          ; 83.88 MHz ( period = 11.922 ns ) ; LCDController:inst1|theMessage[1][0] ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                      ;                                      ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------------------+--------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; WriteMessage1   ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                                                                                                      ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                 ; To                                   ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 83.88 MHz ( period = 11.922 ns )                    ; LCDController:inst1|theMessage[1][0] ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 3.444 ns                ;
+; N/A                                     ; 85.73 MHz ( period = 11.664 ns )                    ; LCDController:inst1|theMessage[1][1] ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 3.314 ns                ;
+; N/A                                     ; 85.81 MHz ( period = 11.654 ns )                    ; LCDController:inst1|theMessage[1][0] ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 2.506 ns                ;
+; N/A                                     ; 86.04 MHz ( period = 11.622 ns )                    ; LCDController:inst1|theMessage[0][6] ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 3.294 ns                ;
+; N/A                                     ; 87.75 MHz ( period = 11.396 ns )                    ; LCDController:inst1|theMessage[1][1] ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 2.376 ns                ;
+; N/A                                     ; 92.05 MHz ( period = 10.864 ns )                    ; LCDController:inst1|theMessage[1][0] ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.111 ns                ;
+; N/A                                     ; 92.05 MHz ( period = 10.864 ns )                    ; LCDController:inst1|theMessage[0][6] ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 2.111 ns                ;
+; N/A                                     ; 94.29 MHz ( period = 10.606 ns )                    ; LCDController:inst1|theMessage[1][1] ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.981 ns                ;
+; N/A                                     ; 99.36 MHz ( period = 10.064 ns )                    ; LCDController:inst1|theMessage[0][6] ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 1.711 ns                ;
+; N/A                                     ; 99.76 MHz ( period = 10.024 ns )                    ; LCDController:inst1|Char_Count[0]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.296 ns                ;
+; N/A                                     ; 100.83 MHz ( period = 9.918 ns )                    ; LCDController:inst1|Char_Count[4]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.243 ns                ;
+; N/A                                     ; 101.85 MHz ( period = 9.818 ns )                    ; LCDController:inst1|Char_Count[2]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.193 ns                ;
+; N/A                                     ; 102.33 MHz ( period = 9.772 ns )                    ; LCDController:inst1|Char_Count[3]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.170 ns                ;
+; N/A                                     ; 103.91 MHz ( period = 9.624 ns )                    ; LCDController:inst1|Char_Count[3]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.593 ns                ;
+; N/A                                     ; 105.06 MHz ( period = 9.518 ns )                    ; LCDController:inst1|Char_Count[0]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.540 ns                ;
+; N/A                                     ; 106.27 MHz ( period = 9.410 ns )                    ; LCDController:inst1|Char_Count[2]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.486 ns                ;
+; N/A                                     ; 106.54 MHz ( period = 9.386 ns )                    ; LCDController:inst1|Char_Count[1]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.977 ns                ;
+; N/A                                     ; 106.63 MHz ( period = 9.378 ns )                    ; LCDController:inst1|Char_Count[4]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.470 ns                ;
+; N/A                                     ; 111.73 MHz ( period = 8.950 ns )                    ; LCDController:inst1|Char_Count[1]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.256 ns                ;
+; N/A                                     ; 112.79 MHz ( period = 8.866 ns )                    ; LCDController:inst1|Char_Count[3]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.410 ns                ;
+; N/A                                     ; 114.16 MHz ( period = 8.760 ns )                    ; LCDController:inst1|Char_Count[0]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.357 ns                ;
+; N/A                                     ; 115.58 MHz ( period = 8.652 ns )                    ; LCDController:inst1|Char_Count[2]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.303 ns                ;
+; N/A                                     ; 116.01 MHz ( period = 8.620 ns )                    ; LCDController:inst1|Char_Count[4]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.287 ns                ;
+; N/A                                     ; 116.99 MHz ( period = 8.548 ns )                    ; LCDController:inst1|Char_Count[5]    ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 119.02 MHz ( period = 8.402 ns )                    ; LCDController:inst1|Char_Count[5]    ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.485 ns                ;
+; N/A                                     ; 122.07 MHz ( period = 8.192 ns )                    ; LCDController:inst1|Char_Count[1]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.073 ns                ;
+; N/A                                     ; 123.98 MHz ( period = 8.066 ns )                    ; LCDController:inst1|Char_Count[3]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 3.010 ns                ;
+; N/A                                     ; 125.63 MHz ( period = 7.960 ns )                    ; LCDController:inst1|Char_Count[0]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.957 ns                ;
+; N/A                                     ; 127.36 MHz ( period = 7.852 ns )                    ; LCDController:inst1|Char_Count[2]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.903 ns                ;
+; N/A                                     ; 127.88 MHz ( period = 7.820 ns )                    ; LCDController:inst1|Char_Count[4]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.887 ns                ;
+; N/A                                     ; 128.37 MHz ( period = 7.790 ns )                    ; LCDController:inst1|Char_Count[5]    ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 2.872 ns                ;
+; N/A                                     ; 135.28 MHz ( period = 7.392 ns )                    ; LCDController:inst1|Char_Count[1]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.673 ns                ;
+; N/A                                     ; 142.09 MHz ( period = 7.038 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[5]    ; CLK        ; CLK      ; None                        ; None                      ; 3.310 ns                ;
+; N/A                                     ; 143.06 MHz ( period = 6.990 ns )                    ; LCDController:inst1|Char_Count[5]    ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.472 ns                ;
+; N/A                                     ; 145.01 MHz ( period = 6.896 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[4]    ; CLK        ; CLK      ; None                        ; None                      ; 3.239 ns                ;
+; N/A                                     ; 148.06 MHz ( period = 6.754 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[3]    ; CLK        ; CLK      ; None                        ; None                      ; 3.168 ns                ;
+; N/A                                     ; 150.78 MHz ( period = 6.632 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[5]    ; CLK        ; CLK      ; None                        ; None                      ; 3.107 ns                ;
+; N/A                                     ; 151.24 MHz ( period = 6.612 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[2]    ; CLK        ; CLK      ; None                        ; None                      ; 3.097 ns                ;
+; N/A                                     ; 154.08 MHz ( period = 6.490 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[4]    ; CLK        ; CLK      ; None                        ; None                      ; 3.036 ns                ;
+; N/A                                     ; 154.56 MHz ( period = 6.470 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[1]    ; CLK        ; CLK      ; None                        ; None                      ; 3.026 ns                ;
+; N/A                                     ; 156.05 MHz ( period = 6.408 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[5]    ; CLK        ; CLK      ; None                        ; None                      ; 2.995 ns                ;
+; N/A                                     ; 157.53 MHz ( period = 6.348 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[3]    ; CLK        ; CLK      ; None                        ; None                      ; 2.965 ns                ;
+; N/A                                     ; 159.59 MHz ( period = 6.266 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[4]    ; CLK        ; CLK      ; None                        ; None                      ; 2.924 ns                ;
+; N/A                                     ; 161.13 MHz ( period = 6.206 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[2]    ; CLK        ; CLK      ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 163.03 MHz ( period = 6.134 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[5]    ; CLK        ; CLK      ; None                        ; None                      ; 2.858 ns                ;
+; N/A                                     ; 163.29 MHz ( period = 6.124 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[3]    ; CLK        ; CLK      ; None                        ; None                      ; 2.853 ns                ;
+; N/A                                     ; 164.91 MHz ( period = 6.064 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[1]    ; CLK        ; CLK      ; None                        ; None                      ; 2.823 ns                ;
+; N/A                                     ; 166.89 MHz ( period = 5.992 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[4]    ; CLK        ; CLK      ; None                        ; None                      ; 2.787 ns                ;
+; N/A                                     ; 167.17 MHz ( period = 5.982 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[2]    ; CLK        ; CLK      ; None                        ; None                      ; 2.782 ns                ;
+; N/A                                     ; 170.94 MHz ( period = 5.850 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[3]    ; CLK        ; CLK      ; None                        ; None                      ; 2.716 ns                ;
+; N/A                                     ; 171.23 MHz ( period = 5.840 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[1]    ; CLK        ; CLK      ; None                        ; None                      ; 2.711 ns                ;
+; N/A                                     ; 175.19 MHz ( period = 5.708 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[2]    ; CLK        ; CLK      ; None                        ; None                      ; 2.645 ns                ;
+; N/A                                     ; 175.56 MHz ( period = 5.696 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Char_Count[0]    ; CLK        ; CLK      ; None                        ; None                      ; 2.639 ns                ;
+; N/A                                     ; 179.66 MHz ( period = 5.566 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[1]    ; CLK        ; CLK      ; None                        ; None                      ; 2.574 ns                ;
+; N/A                                     ; 189.04 MHz ( period = 5.290 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Char_Count[0]    ; CLK        ; CLK      ; None                        ; None                      ; 2.436 ns                ;
+; N/A                                     ; 197.39 MHz ( period = 5.066 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Char_Count[0]    ; CLK        ; CLK      ; None                        ; None                      ; 2.324 ns                ;
+; N/A                                     ; 202.14 MHz ( period = 4.947 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.236 ns                ;
+; N/A                                     ; 208.68 MHz ( period = 4.792 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Char_Count[0]    ; CLK        ; CLK      ; None                        ; None                      ; 2.187 ns                ;
+; N/A                                     ; 210.79 MHz ( period = 4.744 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 3.033 ns                ;
+; N/A                                     ; 213.68 MHz ( period = 4.680 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.662 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.921 ns                ;
+; N/A                                     ; 218.87 MHz ( period = 4.569 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.355 ns                ;
+; N/A                                     ; 222.47 MHz ( period = 4.495 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Current_state[0] ; CLK        ; CLK      ; None                        ; None                      ; 2.784 ns                ;
+; N/A                                     ; 223.36 MHz ( period = 4.477 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.459 ns                ;
+; N/A                                     ; 228.26 MHz ( period = 4.381 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 4.167 ns                ;
+; N/A                                     ; 228.26 MHz ( period = 4.381 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 4.167 ns                ;
+; N/A                                     ; 228.26 MHz ( period = 4.381 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 4.167 ns                ;
+; N/A                                     ; 228.26 MHz ( period = 4.381 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 4.167 ns                ;
+; N/A                                     ; 229.04 MHz ( period = 4.366 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.152 ns                ;
+; N/A                                     ; 229.10 MHz ( period = 4.365 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.347 ns                ;
+; N/A                                     ; 229.52 MHz ( period = 4.357 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 4.143 ns                ;
+; N/A                                     ; 229.52 MHz ( period = 4.357 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 4.143 ns                ;
+; N/A                                     ; 229.52 MHz ( period = 4.357 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 4.143 ns                ;
+; N/A                                     ; 229.52 MHz ( period = 4.357 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 4.143 ns                ;
+; N/A                                     ; 234.25 MHz ( period = 4.269 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 234.25 MHz ( period = 4.269 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 234.25 MHz ( period = 4.269 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 234.25 MHz ( period = 4.269 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 4.055 ns                ;
+; N/A                                     ; 235.07 MHz ( period = 4.254 ns )                    ; LCD_DRIVER:inst|Current_state[0]     ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 4.040 ns                ;
+; N/A                                     ; 236.52 MHz ( period = 4.228 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCDController:inst1|Current_state[1] ; CLK        ; CLK      ; None                        ; None                      ; 3.210 ns                ;
+; N/A                                     ; 242.37 MHz ( period = 4.126 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.912 ns                ;
+; N/A                                     ; 242.37 MHz ( period = 4.126 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.912 ns                ;
+; N/A                                     ; 242.37 MHz ( period = 4.126 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.912 ns                ;
+; N/A                                     ; 242.37 MHz ( period = 4.126 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.912 ns                ;
+; N/A                                     ; 242.90 MHz ( period = 4.117 ns )                    ; LCD_DRIVER:inst|Current_state[1]     ; LCD_DRIVER:inst|Current_state[0]     ; CLK        ; CLK      ; None                        ; None                      ; 3.903 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.858 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 251.19 MHz ( period = 3.981 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.770 ns                ;
+; N/A                                     ; 251.19 MHz ( period = 3.981 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.770 ns                ;
+; N/A                                     ; 251.19 MHz ( period = 3.981 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.770 ns                ;
+; N/A                                     ; 251.19 MHz ( period = 3.981 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.770 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.746 ns                ;
+; N/A                                     ; 252.40 MHz ( period = 3.962 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 252.40 MHz ( period = 3.962 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 252.40 MHz ( period = 3.962 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 252.40 MHz ( period = 3.962 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 253.04 MHz ( period = 3.952 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.741 ns                ;
+; N/A                                     ; 253.04 MHz ( period = 3.952 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.741 ns                ;
+; N/A                                     ; 253.04 MHz ( period = 3.952 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.741 ns                ;
+; N/A                                     ; 253.04 MHz ( period = 3.952 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.741 ns                ;
+; N/A                                     ; 255.43 MHz ( period = 3.915 ns )                    ; LCD_DRIVER:inst|Current_state[2]     ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.897 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[16]       ; CLK        ; CLK      ; None                        ; None                      ; 3.688 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; LCD_DRIVER:inst|timeLCDClk[10]       ; LCD_DRIVER:inst|timeLCDClk[3]        ; CLK        ; CLK      ; None                        ; None                      ; 3.688 ns                ;
+; N/A                                     ; 257.67 MHz ( period = 3.881 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[16]       ; CLK        ; CLK      ; None                        ; None                      ; 3.664 ns                ;
+; N/A                                     ; 257.67 MHz ( period = 3.881 ns )                    ; LCD_DRIVER:inst|timeLCDClk[12]       ; LCD_DRIVER:inst|timeLCDClk[3]        ; CLK        ; CLK      ; None                        ; None                      ; 3.664 ns                ;
+; N/A                                     ; 258.53 MHz ( period = 3.868 ns )                    ; LCD_DRIVER:inst|timeLCDClk[14]       ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 258.53 MHz ( period = 3.868 ns )                    ; LCD_DRIVER:inst|timeLCDClk[14]       ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 258.53 MHz ( period = 3.868 ns )                    ; LCD_DRIVER:inst|timeLCDClk[14]       ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 258.53 MHz ( period = 3.868 ns )                    ; LCD_DRIVER:inst|timeLCDClk[14]       ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.657 ns                ;
+; N/A                                     ; 261.10 MHz ( period = 3.830 ns )                    ; LCD_DRIVER:inst|timeLCDClk[0]        ; LCD_DRIVER:inst|timeLCDClk[16]       ; CLK        ; CLK      ; None                        ; None                      ; 3.616 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 261.78 MHz ( period = 3.820 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.603 ns                ;
+; N/A                                     ; 263.64 MHz ( period = 3.793 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[16]       ; CLK        ; CLK      ; None                        ; None                      ; 3.576 ns                ;
+; N/A                                     ; 263.64 MHz ( period = 3.793 ns )                    ; LCD_DRIVER:inst|timeLCDClk[8]        ; LCD_DRIVER:inst|timeLCDClk[3]        ; CLK        ; CLK      ; None                        ; None                      ; 3.576 ns                ;
+; N/A                                     ; 269.40 MHz ( period = 3.712 ns )                    ; LCD_DRIVER:inst|Current_state[3]     ; LCDController:inst1|Current_state[2] ; CLK        ; CLK      ; None                        ; None                      ; 2.694 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; LCD_DRIVER:inst|timeLCDClk[5]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.493 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; LCD_DRIVER:inst|timeLCDClk[5]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.493 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; LCD_DRIVER:inst|timeLCDClk[5]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.493 ns                ;
+; N/A                                     ; 269.98 MHz ( period = 3.704 ns )                    ; LCD_DRIVER:inst|timeLCDClk[5]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.493 ns                ;
+; N/A                                     ; 271.89 MHz ( period = 3.678 ns )                    ; LCD_DRIVER:inst|timeLCDClk[0]        ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.464 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; LCD_DRIVER:inst|timeLCDClk[13]       ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.461 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; LCD_DRIVER:inst|timeLCDClk[7]        ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.442 ns                ;
+; N/A                                     ; 273.97 MHz ( period = 3.650 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[16]       ; CLK        ; CLK      ; None                        ; None                      ; 3.433 ns                ;
+; N/A                                     ; 273.97 MHz ( period = 3.650 ns )                    ; LCD_DRIVER:inst|timeLCDClk[9]        ; LCD_DRIVER:inst|timeLCDClk[3]        ; CLK        ; CLK      ; None                        ; None                      ; 3.433 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[14]       ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[13]       ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[15]       ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[11]       ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[7]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[6]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[2]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[1]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[4]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 274.27 MHz ( period = 3.646 ns )                    ; LCD_DRIVER:inst|timeLCDClk[6]        ; LCD_DRIVER:inst|timeLCDClk[5]        ; CLK        ; CLK      ; None                        ; None                      ; 3.432 ns                ;
+; N/A                                     ; 275.41 MHz ( period = 3.631 ns )                    ; LCD_DRIVER:inst|timeLCDClk[15]       ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.420 ns                ;
+; N/A                                     ; 275.41 MHz ( period = 3.631 ns )                    ; LCD_DRIVER:inst|timeLCDClk[15]       ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.420 ns                ;
+; N/A                                     ; 275.41 MHz ( period = 3.631 ns )                    ; LCD_DRIVER:inst|timeLCDClk[15]       ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.420 ns                ;
+; N/A                                     ; 275.41 MHz ( period = 3.631 ns )                    ; LCD_DRIVER:inst|timeLCDClk[15]       ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.420 ns                ;
+; N/A                                     ; 275.79 MHz ( period = 3.626 ns )                    ; LCDController:inst1|Current_state[1] ; LCDController:inst1|Char_Count[5]    ; CLK        ; CLK      ; None                        ; None                      ; 2.408 ns                ;
+; N/A                                     ; 276.01 MHz ( period = 3.623 ns )                    ; LCD_DRIVER:inst|timeLCDClk[3]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 276.01 MHz ( period = 3.623 ns )                    ; LCD_DRIVER:inst|timeLCDClk[3]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 276.01 MHz ( period = 3.623 ns )                    ; LCD_DRIVER:inst|timeLCDClk[3]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 276.01 MHz ( period = 3.623 ns )                    ; LCD_DRIVER:inst|timeLCDClk[3]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.412 ns                ;
+; N/A                                     ; 276.32 MHz ( period = 3.619 ns )                    ; LCD_DRIVER:inst|timeLCDClk[2]        ; LCD_DRIVER:inst|timeLCDClk[12]       ; CLK        ; CLK      ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 276.32 MHz ( period = 3.619 ns )                    ; LCD_DRIVER:inst|timeLCDClk[2]        ; LCD_DRIVER:inst|timeLCDClk[10]       ; CLK        ; CLK      ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 276.32 MHz ( period = 3.619 ns )                    ; LCD_DRIVER:inst|timeLCDClk[2]        ; LCD_DRIVER:inst|timeLCDClk[9]        ; CLK        ; CLK      ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 276.32 MHz ( period = 3.619 ns )                    ; LCD_DRIVER:inst|timeLCDClk[2]        ; LCD_DRIVER:inst|timeLCDClk[8]        ; CLK        ; CLK      ; None                        ; None                      ; 3.408 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                      ;                                      ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------+--------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                         ;
++-------+--------------+------------+------------------+--------------------------------------+---------------+
+; Slack ; Required tsu ; Actual tsu ; From             ; To                                   ; To Clock      ;
++-------+--------------+------------+------------------+--------------------------------------+---------------+
+; N/A   ; None         ; 1.757 ns   ; WriteMessage1    ; LCDController:inst1|Current_state[1] ; CLK           ;
+; N/A   ; None         ; 1.703 ns   ; Reset            ; LCDController:inst1|Current_state[0] ; CLK           ;
+; N/A   ; None         ; 1.600 ns   ; WriteMessage1    ; LCDController:inst1|Current_state[0] ; CLK           ;
+; N/A   ; None         ; 1.264 ns   ; WriteMessage1    ; LCDController:inst1|Current_state[2] ; CLK           ;
+; N/A   ; None         ; 1.255 ns   ; Reset            ; LCDController:inst1|Current_state[2] ; CLK           ;
+; N/A   ; None         ; 1.247 ns   ; Reset            ; LCDController:inst1|Current_state[1] ; CLK           ;
+; N/A   ; None         ; -0.987 ns  ; MessageNumber[1] ; LCDController:inst1|theMessage[1][1] ; WriteMessage1 ;
+; N/A   ; None         ; -1.196 ns  ; MessageNumber[0] ; LCDController:inst1|theMessage[1][0] ; WriteMessage1 ;
+; N/A   ; None         ; -1.233 ns  ; MessageNumber[2] ; LCDController:inst1|theMessage[0][6] ; WriteMessage1 ;
+; N/A   ; None         ; -4.723 ns  ; MessageNumber[1] ; LCDController:inst1|theMessage[1][1] ; CLK           ;
+; N/A   ; None         ; -4.932 ns  ; MessageNumber[0] ; LCDController:inst1|theMessage[1][0] ; CLK           ;
+; N/A   ; None         ; -4.969 ns  ; MessageNumber[2] ; LCDController:inst1|theMessage[0][6] ; CLK           ;
++-------+--------------+------------+------------------+--------------------------------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; tco                                                                                                 ;
++-------+--------------+------------+--------------------------------------+----------+---------------+
+; Slack ; Required tco ; Actual tco ; From                                 ; To       ; From Clock    ;
++-------+--------------+------------+--------------------------------------+----------+---------------+
+; N/A   ; None         ; 17.569 ns  ; LCDController:inst1|theMessage[1][0] ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 17.309 ns  ; LCDController:inst1|theMessage[0][6] ; RS       ; CLK           ;
+; N/A   ; None         ; 16.349 ns  ; LCDController:inst1|Char_Count[0]    ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 16.333 ns  ; LCDController:inst1|theMessage[0][6] ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 16.310 ns  ; LCDController:inst1|Char_Count[3]    ; RS       ; CLK           ;
+; N/A   ; None         ; 16.257 ns  ; LCDController:inst1|Char_Count[0]    ; RS       ; CLK           ;
+; N/A   ; None         ; 16.228 ns  ; LCDController:inst1|Char_Count[4]    ; RS       ; CLK           ;
+; N/A   ; None         ; 16.223 ns  ; LCDController:inst1|Char_Count[3]    ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 16.178 ns  ; LCDController:inst1|Char_Count[2]    ; RS       ; CLK           ;
+; N/A   ; None         ; 16.065 ns  ; LCDController:inst1|Char_Count[4]    ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 15.973 ns  ; LCDController:inst1|Char_Count[1]    ; RS       ; CLK           ;
+; N/A   ; None         ; 15.943 ns  ; LCDController:inst1|Char_Count[1]    ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 15.925 ns  ; LCDController:inst1|Char_Count[2]    ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 15.813 ns  ; LCDController:inst1|Char_Count[5]    ; RS       ; CLK           ;
+; N/A   ; None         ; 15.751 ns  ; LCDController:inst1|theMessage[1][1] ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 15.581 ns  ; LCDController:inst1|Char_Count[4]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 15.579 ns  ; LCDController:inst1|Char_Count[0]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 15.545 ns  ; LCDController:inst1|Char_Count[2]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 15.443 ns  ; LCDController:inst1|Char_Count[3]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 15.334 ns  ; LCDController:inst1|Char_Count[3]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 15.315 ns  ; LCDController:inst1|Char_Count[1]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 15.281 ns  ; LCDController:inst1|Char_Count[0]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 15.271 ns  ; LCDController:inst1|Char_Count[4]    ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 15.221 ns  ; LCDController:inst1|Char_Count[2]    ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 15.133 ns  ; LCDController:inst1|Char_Count[3]    ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 15.005 ns  ; LCDController:inst1|Char_Count[1]    ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 14.997 ns  ; LCDController:inst1|Char_Count[1]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 14.861 ns  ; LCDController:inst1|Current_state[2] ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 14.816 ns  ; LCDController:inst1|Current_state[1] ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 14.661 ns  ; LCDController:inst1|Char_Count[4]    ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 14.611 ns  ; LCDController:inst1|Char_Count[2]    ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 14.578 ns  ; LCDController:inst1|Char_Count[2]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 14.523 ns  ; LCDController:inst1|Char_Count[3]    ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 14.395 ns  ; LCDController:inst1|Char_Count[1]    ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 14.309 ns  ; LCDController:inst1|Char_Count[4]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 14.299 ns  ; LCDController:inst1|Char_Count[4]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 14.259 ns  ; LCDController:inst1|Char_Count[2]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 14.249 ns  ; LCDController:inst1|Char_Count[2]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 14.235 ns  ; LCDController:inst1|Char_Count[4]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 14.185 ns  ; LCDController:inst1|Char_Count[2]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 14.175 ns  ; LCDController:inst1|Char_Count[5]    ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 14.171 ns  ; LCDController:inst1|Char_Count[3]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 14.161 ns  ; LCDController:inst1|Char_Count[3]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 14.154 ns  ; LCDController:inst1|Char_Count[5]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 14.130 ns  ; LCD_DRIVER:inst|Current_state[2]     ; RW       ; CLK           ;
+; N/A   ; None         ; 14.097 ns  ; LCDController:inst1|Char_Count[3]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 14.043 ns  ; LCDController:inst1|Char_Count[1]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 14.033 ns  ; LCDController:inst1|Char_Count[1]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 14.011 ns  ; LCDController:inst1|Current_state[0] ; DB[0]    ; CLK           ;
+; N/A   ; None         ; 13.969 ns  ; LCDController:inst1|Char_Count[1]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 13.927 ns  ; LCD_DRIVER:inst|Current_state[3]     ; RW       ; CLK           ;
+; N/A   ; None         ; 13.924 ns  ; LCDController:inst1|Current_state[2] ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 13.879 ns  ; LCDController:inst1|Current_state[1] ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 13.825 ns  ; LCDController:inst1|Current_state[2] ; RS       ; CLK           ;
+; N/A   ; None         ; 13.815 ns  ; LCD_DRIVER:inst|Current_state[0]     ; RW       ; CLK           ;
+; N/A   ; None         ; 13.792 ns  ; LCDController:inst1|Current_state[1] ; RS       ; CLK           ;
+; N/A   ; None         ; 13.707 ns  ; LCDController:inst1|Current_state[2] ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 13.678 ns  ; LCD_DRIVER:inst|Current_state[1]     ; RW       ; CLK           ;
+; N/A   ; None         ; 13.669 ns  ; LCDController:inst1|Char_Count[4]    ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 13.630 ns  ; LCDController:inst1|Char_Count[0]    ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 13.602 ns  ; LCDController:inst1|Char_Count[0]    ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 13.571 ns  ; LCDController:inst1|Current_state[1] ; DB[6]    ; CLK           ;
+; N/A   ; None         ; 13.547 ns  ; LCDController:inst1|Current_state[1] ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 13.255 ns  ; LCDController:inst1|Current_state[2] ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 13.122 ns  ; LCDController:inst1|theMessage[1][0] ; DB[0]    ; WriteMessage1 ;
+; N/A   ; None         ; 13.074 ns  ; LCDController:inst1|Current_state[0] ; DB[3]    ; CLK           ;
+; N/A   ; None         ; 12.996 ns  ; LCDController:inst1|Char_Count[0]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 12.993 ns  ; LCDController:inst1|Current_state[0] ; RS       ; CLK           ;
+; N/A   ; None         ; 12.914 ns  ; LCDController:inst1|Current_state[2] ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 12.884 ns  ; LCDController:inst1|Current_state[2] ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 12.869 ns  ; LCDController:inst1|Current_state[1] ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 12.862 ns  ; LCDController:inst1|theMessage[0][6] ; RS       ; WriteMessage1 ;
+; N/A   ; None         ; 12.748 ns  ; LCDController:inst1|Current_state[1] ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 12.738 ns  ; LCDController:inst1|Current_state[0] ; DB[2]    ; CLK           ;
+; N/A   ; None         ; 12.733 ns  ; LCDController:inst1|Char_Count[0]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 12.723 ns  ; LCDController:inst1|Char_Count[0]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 12.679 ns  ; LCDController:inst1|Char_Count[5]    ; DB[7]    ; CLK           ;
+; N/A   ; None         ; 12.629 ns  ; LCDController:inst1|Char_Count[5]    ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 12.619 ns  ; LCDController:inst1|Char_Count[5]    ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 12.591 ns  ; LCDController:inst1|Current_state[1] ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 12.581 ns  ; LCDController:inst1|Current_state[1] ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 12.577 ns  ; LCD_DRIVER:inst|Current_state[2]     ; E        ; CLK           ;
+; N/A   ; None         ; 12.411 ns  ; LCD_DRIVER:inst|Current_state[3]     ; E        ; CLK           ;
+; N/A   ; None         ; 12.299 ns  ; LCDController:inst1|Current_state[2] ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 12.294 ns  ; LCD_DRIVER:inst|Current_state[1]     ; E        ; CLK           ;
+; N/A   ; None         ; 12.289 ns  ; LCDController:inst1|Current_state[2] ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 12.064 ns  ; LCDController:inst1|Current_state[0] ; DB[1]    ; CLK           ;
+; N/A   ; None         ; 11.886 ns  ; LCDController:inst1|theMessage[0][6] ; DB[6]    ; WriteMessage1 ;
+; N/A   ; None         ; 11.782 ns  ; LCDController:inst1|Current_state[0] ; DB[5]    ; CLK           ;
+; N/A   ; None         ; 11.772 ns  ; LCDController:inst1|Current_state[0] ; DB[4]    ; CLK           ;
+; N/A   ; None         ; 11.767 ns  ; LCDController:inst1|Current_state[2] ; Ready    ; CLK           ;
+; N/A   ; None         ; 11.749 ns  ; LCDController:inst1|Current_state[1] ; Ready    ; CLK           ;
+; N/A   ; None         ; 11.304 ns  ; LCDController:inst1|theMessage[1][1] ; DB[1]    ; WriteMessage1 ;
+; N/A   ; None         ; 10.949 ns  ; LCDController:inst1|Current_state[0] ; Ready    ; CLK           ;
+; N/A   ; None         ; 6.938 ns   ; inst13                               ; TheClock ; CLK           ;
++-------+--------------+------------+--------------------------------------+----------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                ;
++---------------+-------------+-----------+------------------+--------------------------------------+---------------+
+; Minimum Slack ; Required th ; Actual th ; From             ; To                                   ; To Clock      ;
++---------------+-------------+-----------+------------------+--------------------------------------+---------------+
+; N/A           ; None        ; 6.508 ns  ; MessageNumber[2] ; LCDController:inst1|theMessage[0][6] ; CLK           ;
+; N/A           ; None        ; 6.333 ns  ; MessageNumber[0] ; LCDController:inst1|theMessage[1][0] ; CLK           ;
+; N/A           ; None        ; 6.326 ns  ; MessageNumber[1] ; LCDController:inst1|theMessage[1][1] ; CLK           ;
+; N/A           ; None        ; 2.061 ns  ; MessageNumber[2] ; LCDController:inst1|theMessage[0][6] ; WriteMessage1 ;
+; N/A           ; None        ; 1.886 ns  ; MessageNumber[0] ; LCDController:inst1|theMessage[1][0] ; WriteMessage1 ;
+; N/A           ; None        ; 1.879 ns  ; MessageNumber[1] ; LCDController:inst1|theMessage[1][1] ; WriteMessage1 ;
+; N/A           ; None        ; -1.017 ns ; Reset            ; LCDController:inst1|Current_state[1] ; CLK           ;
+; N/A           ; None        ; -1.025 ns ; Reset            ; LCDController:inst1|Current_state[2] ; CLK           ;
+; N/A           ; None        ; -1.034 ns ; WriteMessage1    ; LCDController:inst1|Current_state[2] ; CLK           ;
+; N/A           ; None        ; -1.370 ns ; WriteMessage1    ; LCDController:inst1|Current_state[0] ; CLK           ;
+; N/A           ; None        ; -1.473 ns ; Reset            ; LCDController:inst1|Current_state[0] ; CLK           ;
+; N/A           ; None        ; -1.527 ns ; WriteMessage1    ; LCDController:inst1|Current_state[1] ; CLK           ;
++---------------+-------------+-----------+------------------+--------------------------------------+---------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Mon Jun 24 13:13:20 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off LCD_DRIVER -c LCD_DRIVER --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "LCDController:inst1|theMessage[1][0]" is a latch
+    Warning: Node "LCDController:inst1|theMessage[1][1]" is a latch
+    Warning: Node "LCDController:inst1|theMessage[0][6]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK" is an undefined clock
+    Info: Assuming node "WriteMessage1" is a latch enable and/or memory write/read enable. Will not compute fmax for this pin.
+Warning: Found 5 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "LCDController:inst1|theMessage[32][1]~3" as buffer
+    Info: Detected ripple clock "LCDController:inst1|Current_state[1]" as buffer
+    Info: Detected ripple clock "LCDController:inst1|Current_state[0]" as buffer
+    Info: Detected ripple clock "LCDController:inst1|Current_state[2]" as buffer
+    Info: Detected ripple clock "inst13" as buffer
+Info: Clock "CLK" has Internal fmax of 83.88 MHz between source register "LCDController:inst1|theMessage[1][0]" and destination register "LCD_DRIVER:inst|Current_state[0]" (period= 11.922 ns)
+    Info: + Longest register to register delay is 3.444 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X63_Y20_N14; Fanout = 2; REG Node = 'LCDController:inst1|theMessage[1][0]'
+        Info: 2: + IC(0.266 ns) + CELL(0.275 ns) = 0.541 ns; Loc. = LCCOMB_X63_Y20_N6; Fanout = 1; COMB Node = 'LCDController:inst1|Equal7~0'
+        Info: 3: + IC(0.246 ns) + CELL(0.149 ns) = 0.936 ns; Loc. = LCCOMB_X63_Y20_N2; Fanout = 3; COMB Node = 'LCDController:inst1|Equal7~1'
+        Info: 4: + IC(0.661 ns) + CELL(0.271 ns) = 1.868 ns; Loc. = LCCOMB_X64_Y20_N0; Fanout = 1; COMB Node = 'LCD_DRIVER:inst|Next_state[0]~27'
+        Info: 5: + IC(0.241 ns) + CELL(0.150 ns) = 2.259 ns; Loc. = LCCOMB_X64_Y20_N20; Fanout = 1; COMB Node = 'LCD_DRIVER:inst|Next_state[0]~28'
+        Info: 6: + IC(0.951 ns) + CELL(0.150 ns) = 3.360 ns; Loc. = LCCOMB_X63_Y22_N16; Fanout = 1; COMB Node = 'LCD_DRIVER:inst|Next_state[0]~29'
+        Info: 7: + IC(0.000 ns) + CELL(0.084 ns) = 3.444 ns; Loc. = LCFF_X63_Y22_N17; Fanout = 5; REG Node = 'LCD_DRIVER:inst|Current_state[0]'
+        Info: Total cell delay = 1.079 ns ( 31.33 % )
+        Info: Total interconnect delay = 2.365 ns ( 68.67 % )
+    Info: - Smallest clock skew is -2.553 ns
+        Info: + Shortest clock path from clock "CLK" to destination register is 6.095 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'CLK'
+            Info: 2: + IC(1.976 ns) + CELL(0.787 ns) = 3.762 ns; Loc. = LCFF_X64_Y20_N17; Fanout = 6; REG Node = 'inst13'
+            Info: 3: + IC(0.781 ns) + CELL(0.000 ns) = 4.543 ns; Loc. = CLKCTRL_G4; Fanout = 27; COMB Node = 'inst13~clkctrl'
+            Info: 4: + IC(1.015 ns) + CELL(0.537 ns) = 6.095 ns; Loc. = LCFF_X63_Y22_N17; Fanout = 5; REG Node = 'LCD_DRIVER:inst|Current_state[0]'
+            Info: Total cell delay = 2.323 ns ( 38.11 % )
+            Info: Total interconnect delay = 3.772 ns ( 61.89 % )
+        Info: - Longest clock path from clock "CLK" to source register is 8.648 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'CLK'
+            Info: 2: + IC(1.976 ns) + CELL(0.787 ns) = 3.762 ns; Loc. = LCFF_X64_Y20_N17; Fanout = 6; REG Node = 'inst13'
+            Info: 3: + IC(0.992 ns) + CELL(0.787 ns) = 5.541 ns; Loc. = LCFF_X63_Y20_N5; Fanout = 15; REG Node = 'LCDController:inst1|Current_state[1]'
+            Info: 4: + IC(0.517 ns) + CELL(0.275 ns) = 6.333 ns; Loc. = LCCOMB_X64_Y20_N14; Fanout = 1; COMB Node = 'LCDController:inst1|theMessage[32][1]~3'
+            Info: 5: + IC(0.812 ns) + CELL(0.000 ns) = 7.145 ns; Loc. = CLKCTRL_G7; Fanout = 3; COMB Node = 'LCDController:inst1|theMessage[32][1]~3clkctrl'
+            Info: 6: + IC(1.353 ns) + CELL(0.150 ns) = 8.648 ns; Loc. = LCCOMB_X63_Y20_N14; Fanout = 2; REG Node = 'LCDController:inst1|theMessage[1][0]'
+            Info: Total cell delay = 2.998 ns ( 34.67 % )
+            Info: Total interconnect delay = 5.650 ns ( 65.33 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "LCDController:inst1|Current_state[1]" (data pin = "WriteMessage1", clock pin = "CLK") is 1.757 ns
+    Info: + Longest pin to register delay is 7.084 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_N23; Fanout = 4; CLK Node = 'WriteMessage1'
+        Info: 2: + IC(4.491 ns) + CELL(0.416 ns) = 5.749 ns; Loc. = LCCOMB_X64_Y20_N18; Fanout = 1; COMB Node = 'LCDController:inst1|Next_state[1]~21'
+        Info: 3: + IC(0.435 ns) + CELL(0.419 ns) = 6.603 ns; Loc. = LCCOMB_X63_Y20_N12; Fanout = 1; COMB Node = 'LCDController:inst1|Next_state[1]~23'
+        Info: 4: + IC(0.247 ns) + CELL(0.150 ns) = 7.000 ns; Loc. = LCCOMB_X63_Y20_N4; Fanout = 1; COMB Node = 'LCDController:inst1|Current_state~13'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 7.084 ns; Loc. = LCFF_X63_Y20_N5; Fanout = 15; REG Node = 'LCDController:inst1|Current_state[1]'
+        Info: Total cell delay = 1.911 ns ( 26.98 % )
+        Info: Total interconnect delay = 5.173 ns ( 73.02 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 5.291 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(1.976 ns) + CELL(0.787 ns) = 3.762 ns; Loc. = LCFF_X64_Y20_N17; Fanout = 6; REG Node = 'inst13'
+        Info: 3: + IC(0.992 ns) + CELL(0.537 ns) = 5.291 ns; Loc. = LCFF_X63_Y20_N5; Fanout = 15; REG Node = 'LCDController:inst1|Current_state[1]'
+        Info: Total cell delay = 2.323 ns ( 43.90 % )
+        Info: Total interconnect delay = 2.968 ns ( 56.10 % )
+Info: tco from clock "CLK" to destination pin "DB[0]" through register "LCDController:inst1|theMessage[1][0]" is 17.569 ns
+    Info: + Longest clock path from clock "CLK" to source register is 8.648 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(1.976 ns) + CELL(0.787 ns) = 3.762 ns; Loc. = LCFF_X64_Y20_N17; Fanout = 6; REG Node = 'inst13'
+        Info: 3: + IC(0.992 ns) + CELL(0.787 ns) = 5.541 ns; Loc. = LCFF_X63_Y20_N5; Fanout = 15; REG Node = 'LCDController:inst1|Current_state[1]'
+        Info: 4: + IC(0.517 ns) + CELL(0.275 ns) = 6.333 ns; Loc. = LCCOMB_X64_Y20_N14; Fanout = 1; COMB Node = 'LCDController:inst1|theMessage[32][1]~3'
+        Info: 5: + IC(0.812 ns) + CELL(0.000 ns) = 7.145 ns; Loc. = CLKCTRL_G7; Fanout = 3; COMB Node = 'LCDController:inst1|theMessage[32][1]~3clkctrl'
+        Info: 6: + IC(1.353 ns) + CELL(0.150 ns) = 8.648 ns; Loc. = LCCOMB_X63_Y20_N14; Fanout = 2; REG Node = 'LCDController:inst1|theMessage[1][0]'
+        Info: Total cell delay = 2.998 ns ( 34.67 % )
+        Info: Total interconnect delay = 5.650 ns ( 65.33 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 8.921 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X63_Y20_N14; Fanout = 2; REG Node = 'LCDController:inst1|theMessage[1][0]'
+        Info: 2: + IC(0.728 ns) + CELL(0.437 ns) = 1.165 ns; Loc. = LCCOMB_X61_Y20_N22; Fanout = 1; COMB Node = 'LCDController:inst1|Mux11~31'
+        Info: 3: + IC(0.240 ns) + CELL(0.150 ns) = 1.555 ns; Loc. = LCCOMB_X61_Y20_N8; Fanout = 1; COMB Node = 'LCDController:inst1|DataOut[0]~69'
+        Info: 4: + IC(4.724 ns) + CELL(2.642 ns) = 8.921 ns; Loc. = PIN_J1; Fanout = 0; PIN Node = 'DB[0]'
+        Info: Total cell delay = 3.229 ns ( 36.20 % )
+        Info: Total interconnect delay = 5.692 ns ( 63.80 % )
+Info: th for register "LCDController:inst1|theMessage[0][6]" (data pin = "MessageNumber[2]", clock pin = "CLK") is 6.508 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 8.648 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_N2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(1.976 ns) + CELL(0.787 ns) = 3.762 ns; Loc. = LCFF_X64_Y20_N17; Fanout = 6; REG Node = 'inst13'
+        Info: 3: + IC(0.992 ns) + CELL(0.787 ns) = 5.541 ns; Loc. = LCFF_X63_Y20_N5; Fanout = 15; REG Node = 'LCDController:inst1|Current_state[1]'
+        Info: 4: + IC(0.517 ns) + CELL(0.275 ns) = 6.333 ns; Loc. = LCCOMB_X64_Y20_N14; Fanout = 1; COMB Node = 'LCDController:inst1|theMessage[32][1]~3'
+        Info: 5: + IC(0.812 ns) + CELL(0.000 ns) = 7.145 ns; Loc. = CLKCTRL_G7; Fanout = 3; COMB Node = 'LCDController:inst1|theMessage[32][1]~3clkctrl'
+        Info: 6: + IC(1.353 ns) + CELL(0.150 ns) = 8.648 ns; Loc. = LCCOMB_X63_Y20_N28; Fanout = 1; REG Node = 'LCDController:inst1|theMessage[0][6]'
+        Info: Total cell delay = 2.998 ns ( 34.67 % )
+        Info: Total interconnect delay = 5.650 ns ( 65.33 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+    Info: - Shortest pin to register delay is 2.140 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.999 ns) = 0.999 ns; Loc. = PIN_P25; Fanout = 1; PIN Node = 'MessageNumber[2]'
+        Info: 2: + IC(0.870 ns) + CELL(0.271 ns) = 2.140 ns; Loc. = LCCOMB_X63_Y20_N28; Fanout = 1; REG Node = 'LCDController:inst1|theMessage[0][6]'
+        Info: Total cell delay = 1.270 ns ( 59.35 % )
+        Info: Total interconnect delay = 0.870 ns ( 40.65 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 185 megabytes
+    Info: Processing ended: Mon Jun 24 13:13:21 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

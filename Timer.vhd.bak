@@ -1,0 +1,24 @@
+LIBRARY	ieee;
+USE		ieee.std_logic_1164.all;
+USE 		ieee.numeric_std.all;
+
+ENTITY Timer IS
+	PORT(
+		Clock, Load: IN std_logic;
+		Mode: IN std_logic_vector(1 downto 0);
+		Done: OUT std_logic
+	
+	);
+END;
+
+ARCHITECTURE Behavioural OF Timer IS
+	SIGNAL Count : unsigned(3 downto 0)
+
+BEGIN
+	process(Clock, Reset)
+		
+	begin	
+	
+	
+	end process;
+END;
